@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="
+            position: relative;
+            height: 1200px;
+            overflow: hidden;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            ">
+    <div style="
+    display: flex;
+    justify-content: space-around;
+    width: 44%;
+    color: white
+    ">
+        <div>
+            <ul>
+                <li> Đây là unorderlist item 1</li>
+                <li> Đây là unorderlist item 2</li>
+                <li> Đây là unorderlist item 3</li>
+            </ul>
+        </div>
+        <div>
+            <ol>
+                <li> Đây là orderlist item 1</li>
+                <li> Đây là orderlist item 2</li>
+                <li> Đây là orderlist item 3</li>
+            </ol>
+        </div>
+    </div>
+    <audio controls>
+        <source src="music_ex.mp3" type="audio/mpeg">
+    </audio>
+    <img src="https://bom.edu.vn/public/upload/2024/12/avatar-nobita-cute-3.webp" alt="Đây là thẻ hình ảnh (image)." width="200" height="200">
+    <br>
+    <!-- <iframe allow="autoplay" src="video_ex.mp4" frameborder="0" width="600px" height="300px" title="One Piece"></iframe> -->
+    <video autoplay loop muted width="600" height="300" controls>
+        <source src="video_ex.mp4" type="video/mp4">
+    </video>
+
+    <!-- ----------Backgroud là video -->
+    <div >
+        <video autoplay loop muted style="position: absolute; top: 0%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); z-index: -1;">
+            <source src="video_ex.mp4" type="video/mp4">
+        </video>
+        <div style="position: relative; color: white; text-align: center; padding-top: 130px;">
+        </div>
+    </div>
+</body>
+</html>

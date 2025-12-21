@@ -1,0 +1,35 @@
+body{
+    background-color: lightblue;
+    margin: 0px;
+}
+
+h1{
+    background-color: yellow;
+}
+p{
+    background-color: lightgreen;
+}
+p:hover{
+    background-color: green;
+    color: white;
+}
+span:nth-last-child(1){
+    background-color: orange;
+    display: inline;
+    width: 200px;
+    height: 100px;
+}
+span:nth-last-child(2){
+    background-color: pink;
+    display: block;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+}
+span:nth-last-child(3){
+    background-color: rgba(188, 208, 77, 0.773);
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    user-select: none;
+}
