@@ -1,0 +1,57 @@
+.tieuDe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size:30px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+body{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+#addItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    background-color: #48dbfb;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+#todoList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 250px;
+}
+
+li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    background-color: #ff9f43;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+li.done{
+    text-decoration: line-through;
+    background-color: #d3d3d3;
+}

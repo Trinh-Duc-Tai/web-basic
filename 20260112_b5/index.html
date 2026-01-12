@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="tieuDe">To do list</div>
+    <button id="addItem">Add Item</button>
+    <ul id="todoList">
+        <div id="check"></div>
+    </ul>
+    <script>
+        const addBtn = document.getElementById("addItem");
+        const todoListItem = document.getElementById("todoList");
+        addBtn.addEventListener("click", function(){
+            const text = prompt("Enter a new to-do item:");
+            if(!text || !text.trim()){
+                alert("Please enter a valid item.");
+                return;
+            }
+            const li = document.createElement("li");
+            li.textContent = text.trim();
+            
+            li.addEventListener("click", function(){
+                li.classList.toggle("done");
+            });
+
+            todoListItem.appendChild(li);
+
+        })
+
+        // --------------------------------
+        // console.log("Hello");
+        // alert("Hello World")
+        // confirm("This is a confirm dialog");
+        // prompt("This is a prompt dialog");
+        // console.log("User input:", prompt("Please enter something:"));
+        // confirm("Do you want to proceed?");
+        // console.dir(document);
+        // console.table([{name: "Alice", age: 30}, {name: "Bob", age: 25}]);
+        // console.time("Timer");
+        // for (let i = 0; i < 100000; i++) {
+        //     // Simulate some work
+        //     Math.sqrt(i);
+        // }
+        // console.timeEnd("Timer");
+    </script>
+</body>
+</html>
