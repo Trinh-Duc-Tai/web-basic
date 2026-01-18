@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plus-Minus-Reset</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="up">
+        <div id="btn-minus" class="btn">-</div>
+        <div id="counter">0</div>
+        <div id="btn-plus" class="btn">+</div>
+    </div>
+    <!-- het up  -->
+    <div id="btn-reset">Reset</div>
+    <script>
+        counter = 0;
+        const counterDisplay = document.getElementById("counter");
+        const btnMinus = document.getElementById("btn-minus");
+        const btnPlus = document.getElementById("btn-plus");
+        const btnReset = document.getElementById("btn-reset");
+
+        btnMinus.addEventListener("click", function() {
+            counter--;
+            counterDisplay.textContent = counter;
+        });
+
+        btnPlus.addEventListener("click", function() {
+            counter++;
+            counterDisplay.textContent = counter;
+        });
+
+        btnReset.addEventListener("click", function() {
+            counter = 0;
+            counterDisplay.textContent = counter;
+        });
+    </script>
+</body>
+</html>

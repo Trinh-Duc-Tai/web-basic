@@ -11,7 +11,6 @@
     <div class="tieuDe">To do list</div>
     <button id="addItem">Add Item</button>
     <ul id="todoList">
-        <div id="check"></div>
     </ul>
     <script>
         const addBtn = document.getElementById("addItem");
@@ -26,11 +25,11 @@
             li.textContent = text.trim();
             
             li.addEventListener("click", function(){
-                li.classList.toggle("done");
+                // li.classList.toggle("done"); // Đánh dấu hoàn thành khi nhấp vào
+                li.remove() // Xóa mục khi nhấp vào
             });
 
             todoListItem.appendChild(li);
-
         })
 
         // --------------------------------
