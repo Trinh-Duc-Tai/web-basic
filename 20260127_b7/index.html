@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register</title>
+</head>
+<body>
+    <div class="container">
+        <h2 id="title">Đăng ký</h2>
+
+        <input type="text" id="username" placeholder="Tên đăng nhập">
+        <input type="password" id="password" placeholder="Mật khẩu">
+
+        <button onclick="register()">Đăng ký</button>
+        <button onclick="login()">Đăng nhập</button>
+
+        <button onclick="clearAll()">Xóa hết tài khoản</button>
+
+        <p id="message"></p>
+    </div>
+    <!-- het div container  -->
+    <script>
+        function register(){
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+
+            if(!username || !password){
+                message.textContent = "Vui lòng nhập đủ thông tintên đăng nhập và mật khẩu.";
+                return;
+            }
+
+            //Kiểm tra nếu người dùng đã tồn tại trong localStorage
+            if(localStorage.getItem(username)){
+                message.textContent = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
+                return;
+            }
+
+            //Lưu thông tin người dùng vào localStorage
+            localStorage.setItem(username, password);
+            message.style.color = "green";
+            message.textContent = "Đăng ký thành công!";
+            document.getElementById("username").value = ""
+            document.getElementById("password").value = ""
+        }
+
+        function login(){
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+
+            const storedPassword = localStorage.getItem(username);
+
+            if(!storedPassword){
+                message.textContent = "Tên đăng nhập không tồn tại.";
+                message.style.color = "red";
+                return;
+            }
+
+            if(storedPassword === password){
+                message.textContent = "Đăng nhập thành công!";
+                message.style.color = "green";
+            } else {
+                message.textContent = "Tên đăng nhập hoặc mật khẩu không đúng.";
+                message.style.color = "red";
+            }
+        }
+
+        function clearAll(){
+            localStorage.clear();
+            const message = document.getElementById("message");
+            message.textContent = "Đã xóa hết tài khoản.";
+            message.style.color = "orange";
+        }
+    </script>
+</body>
+</html>
