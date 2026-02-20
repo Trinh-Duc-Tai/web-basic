@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Manager - Fetch API</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        input {
+            padding: 8px;
+            margin-right: 5px;
+        }
+        button {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        li {
+            margin: 8px 0;
+            padding: 8px;
+            background: #f2f2f2;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>🎓 Student Manager (Fetch API)</h2>
+    <button onclick="loadStudents()">Load Students</button>
+    <ul id="list"></ul>
+
+    <script>
+        const API_URL = "https://api.mockfly.dev/mocks/3cf3d552-ccf5-43db-a359-4c0e8e60a825/student";
+
+    // GET STUDENTS
+        async function loadStudents() {
+            try {
+                const res = await fetch(API_URL);
+                const students = await res.json();
+                const list = document.getElementById("list");
+                list.innerHTML = "";
+                students.forEach(s => {
+                    const li = document.createElement("li");
+                    li.innerText = `${s.name} - ${s.age} tuổi`;
+                    list.appendChild(li);
+                });
+            } catch (err) {
+                alert("Lỗi khi load dữ liệu!");
+                console.error(err);
+            }
+        }
+    </script>
+
+</body>
+</html>
