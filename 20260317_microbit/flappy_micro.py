@@ -32,7 +32,7 @@ def bird_control(b):
         b[0] = b[0]+1
         draw_bird(0, y, 0)
         draw_bird(0, b[0], 9)
-def pipe_run(pipe,toc_do,dem):
+def pipe_run(pipe,toc_do):
     if pipe[0][0] > 0:
         draw_pipe(pipe[0][0],pipe[0][1],pipe[1][0],pipe[1][1],0)
         pipe[0][0] -= 1
@@ -52,8 +52,8 @@ dem = 1
 while True:
     # pipe move
     bird_control(b)
-    pipe_run(p1,toc_do,dem)
-    pipe_run(p2,toc_do,dem)
+    pipe_run(p1,toc_do)
+    pipe_run(p2,toc_do)
     dem += 1
     if dem % 5 == 0 and toc_do-200 > 0:
         toc_do -= 200
